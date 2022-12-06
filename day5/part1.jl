@@ -1,4 +1,3 @@
-score = 0
 crates = []
 flipped = false
 
@@ -22,8 +21,8 @@ for line in readlines(ARGS[1])
     elseif startswith(line, "move")
         if !flipped
             flipped = true
-            for i in 1:length(crates)
-                reverse!(crates[i])
+            for crate in crates
+                reverse!(crate)
             end
         end
 
@@ -39,3 +38,4 @@ end
 for crate in crates
     print(last(crate))
 end
+
